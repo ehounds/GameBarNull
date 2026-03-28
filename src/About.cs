@@ -67,7 +67,7 @@ namespace GameBarNull
             // Tagline
             header.Controls.Add(new Label
             {
-                Text      = "Silence is golden  \uD83C\uDFAE\u2192\uD83D\uDD07",
+                Text      = "Because nobody asked for that popup.  \uD83D\uDE0C",
                 ForeColor = Color.FromArgb(180, 195, 230),
                 Font      = new Font("Segoe UI", 9f, FontStyle.Italic),
                 Location  = new Point(22, 76),
@@ -84,10 +84,10 @@ namespace GameBarNull
             descPanel.Controls.Add(new Label
             {
                 Text =
-                    "Every time a game fires off an ms-gamebar:// link, Windows " +
-                    "normally pops up an annoying \u201cGet an app\u201d dialog.\r\n\r\n" +
-                    "GameBarNull quietly swallows those calls and goes back to sleep " +
-                    "\u2014 no popup, no fuss, no Xbox anything.",
+                    "You're mid-game. Windows decides it's a great time to ask " +
+                    "if you\u2019d like to find an app for ms-gamebar://. You would not.\r\n\r\n" +
+                    "GameBarNull sits in the background, catches those calls, " +
+                    "and quietly bins them. No dialog. No Xbox. Just vibes.",
                 Location = new Point(0, 0),
                 Width    = 362,
                 Height   = 82,
@@ -101,10 +101,10 @@ namespace GameBarNull
             Controls.Add(MakeLine(y)); y += 16;
 
             // GitHub link
-            Controls.Add(MakeIconLabel("\uD83D\uDCBB", "Source on GitHub", GithubUrl, y)); y += 30;
+            Controls.Add(MakeIconLabel("\uD83D\uDCBB", "Peek under the hood on GitHub", GithubUrl, y)); y += 30;
 
             // Ko-fi
-            Controls.Add(MakeIconLabel("\u2615", "Buy me a coffee on Ko-fi", KoFiUrl, y)); y += 34;
+            Controls.Add(MakeIconLabel("\u2615", "Enjoyed the silence? Buy me a coffee!", KoFiUrl, y)); y += 34;
 
             // Divider
             Controls.Add(MakeLine(y)); y += 16;
@@ -112,7 +112,7 @@ namespace GameBarNull
             // Footer credit
             Controls.Add(new Label
             {
-                Text      = "Made with \u2665 by Adam Sharp  \u2014  E-Hounds, Inc.",
+                Text      = "Handcrafted with \u2665 by Adam Sharp  \u2014  E-Hounds, Inc.",
                 Location  = new Point(20, y),
                 AutoSize  = true,
                 Font      = new Font("Segoe UI", 8.5f),
@@ -122,7 +122,7 @@ namespace GameBarNull
 
             Controls.Add(new Label
             {
-                Text      = "Free \u0026 open source \u2014 use it, share it, improve it.",
+                Text      = "Free \u0026 open source \u2014 grab it, fork it, do whatever.",
                 Location  = new Point(20, y),
                 AutoSize  = true,
                 Font      = new Font("Segoe UI", 8.5f, FontStyle.Italic),
