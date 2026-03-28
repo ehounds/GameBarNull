@@ -131,6 +131,16 @@ namespace GameBarNull
             _btnInstall.Click += OnInstall;
             Controls.Add(_btnInstall);
             AcceptButton = _btnInstall;
+
+            var btnAbout = new Button
+            {
+                Text     = "About",
+                Location = new Point(22, 296),
+                Size     = new Size(80, 30),
+                FlatStyle= FlatStyle.System
+            };
+            btnAbout.Click += (s, e) => AboutForm.ShowAbout(this);
+            Controls.Add(btnAbout);
         }
 
         void AddLabel(string text, int x, int y, bool bold = false)

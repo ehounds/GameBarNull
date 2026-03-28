@@ -23,16 +23,17 @@ Write-Host ""
 
 if (-not (Test-Path $distDir)) { New-Item -ItemType Directory -Path $distDir | Out-Null }
 
-function Compile($label, $source, $output, [switch]$uac) {
+function Compile($label, $sources, $output, [switch]$uac) {
     Write-Host "Building  $label..." -NoNewline
     $args = @(
         '/nologo',
         '/target:winexe',
         "/out:$output",
-        '/reference:System.Windows.Forms.dll',
-        $source
+        '/reference:System.Windows.Forms.dll'
     )
     if ($uac) { $args += "/win32manifest:$manifest" }
+    # Append source file(s) — accepts a single string or an array
+    $args += $sources
 
     & $csc @args
     if ($LASTEXITCODE -ne 0) {
@@ -49,13 +50,13 @@ Compile 'GameBarNull.exe' `
 
 # Setup.exe  (requires admin — UAC manifest embedded)
 Compile 'Setup.exe' `
-        (Join-Path $srcDir  'Setup.cs') `
+        @((Join-Path $srcDir 'Setup.cs'), (Join-Path $srcDir 'About.cs')) `
         (Join-Path $distDir 'Setup.exe') `
         -uac
 
 # Uninstaller.exe  (requires admin — UAC manifest embedded)
 Compile 'Uninstaller.exe' `
-        (Join-Path $srcDir  'Uninstaller.cs') `
+        @((Join-Path $srcDir 'Uninstaller.cs'), (Join-Path $srcDir 'About.cs')) `
         (Join-Path $distDir 'Uninstaller.exe') `
         -uac
 
