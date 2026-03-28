@@ -12,7 +12,7 @@ namespace GameBarNull
 {
     class AboutForm : Form
     {
-        const string KoFiUrl   = "https://ko-fi.com/asharpd";
+        const string KoFiUrl   = "https://ko-fi.com/asharpdude";
         const string GithubUrl = "https://github.com/ehounds/GameBarNull";
         const string Version   = "1.0.0";
 
