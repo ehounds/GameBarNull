@@ -1,0 +1,13 @@
+# Compiled output
+dist/
+*.exe
+
+# Visual Studio / Rider
+.vs/
+*.user
+*.suo
+*.userosscache
+
+# Build artifacts
+obj/
+bin/
