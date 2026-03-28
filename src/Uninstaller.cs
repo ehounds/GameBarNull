@@ -215,6 +215,16 @@ namespace GameBarNull
             _btnUninstall.Click += OnUninstall;
             Controls.Add(_btnUninstall);
             AcceptButton = _btnUninstall;
+
+            var btnAbout = new Button
+            {
+                Text     = "About",
+                Location = new Point(22, 238),
+                Size     = new Size(80, 30),
+                FlatStyle= FlatStyle.System
+            };
+            btnAbout.Click += (s, e) => AboutForm.ShowAbout(this);
+            Controls.Add(btnAbout);
         }
 
         void SetStatus(string msg, Color? color = null)
